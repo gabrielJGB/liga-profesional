@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     VitePWA({
       manifest,
-      devOptions:{enabled:true}
+      devOptions:{enabled:false}
     })
   ],
 })
