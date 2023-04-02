@@ -1,0 +1,327 @@
+body {
+  background-color: #2b2b2b;
+  color: #eeeeee
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  width: fit-content;
+  justify-content: space-evenly;
+  margin: 20px
+}
+
+
+.standings-table {
+  width: 40%;
+  font-size: 12px;
+}
+
+.standings-table th {
+
+  background-color: #121212;
+  text-align: center;
+  border: 0
+}
+
+.standings-table td {
+  text-align: center;
+
+
+}
+
+.standings-title {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.fixture-arrows {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+
+
+.fixture-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px
+}
+
+.fixture-button {
+  font-size: 12px;
+  text-align: center;
+
+}
+
+.fixture-table {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.fixture-container {
+  width: 40%;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.day-row {
+  text-align: center;
+  background-color: #121212 !important;
+}
+
+.team-row {
+  
+  transition: all 0.2s;
+}
+
+.team-row:hover {
+  cursor: pointer;
+  transform: translateX(10px);
+  transition: all 0.2s;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+
+}
+
+.match-row:hover {
+
+  cursor: pointer;
+}
+
+.day-row:hover {
+  background-color: #121212 !important;
+}
+
+
+.offcanvas.offcanvas-end {
+  width: 25% !important;
+}
+
+
+
+.history-row td {
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px !important
+}
+
+.rival {
+  display: flex;
+  flex-direction: row;
+}
+
+.offcanvas {
+  box-shadow: 0 0 50px black;
+}
+
+.offcanvas-body {
+  padding: 0 !important;
+}
+
+.offcanvas.offcanvas-bottom {
+
+  width: 50% !important;
+}
+
+
+.btn-close {
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fc0'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+}
+
+.match-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  gap: 10px
+}
+
+.match-day {
+  font-size: 14px;
+}
+
+.match-number {
+  font-size: 22px;
+}
+
+.match-body {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+}
+
+.match-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.match-score {
+  font-size: 40px;
+}
+
+.match-container {
+  background-color: #d30000;
+
+}
+
+
+
+.scorers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
+  text-align: center;
+  gap: 5px
+}
+
+.fin {
+  background-color: #162e19 !important;
+}
+
+
+.roja {
+  display: block;
+  background-color: #b50000;
+  height: 9px;
+  width: 5px;
+  margin: 0 2px;
+}
+
+.team-td {
+  display: flex
+}
+
+.dot {
+  display: flex;
+  height: 8px;
+  width: 8px;
+  border-radius: 4px;
+  margin-left: 5px;
+  animation: blinkingDot 1.2s infinite;
+}
+
+.team-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cronometro {
+  color: #fff;
+  background-color: #920000 !important;
+  animation: blinkingColor 1.2s infinite;
+}
+
+.loading{
+  color:white;
+  animation: blinkingColorLoading 1s infinite;
+}
+
+.plantel-link{
+  color:#f1f1f1;
+  font-size: 14px;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.plantel-link:hover{
+  color:#f1f1f1;
+  text-decoration: underline;
+}
+
+@keyframes blinkingColorLoading {
+  0% {
+    color: #ffffff;
+  }
+
+  50% {
+    color: #868686;
+  }
+  100% {
+    color: #ffffff;
+  }
+}
+
+@keyframes blinkingDot {
+  0% {
+    transform: scale(1);
+    
+  }
+
+  50%{
+    transform: scale(0.5);
+
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes blinkingColor {
+  0% {
+    color: #ffffff;
+  }
+
+  50% {
+    color: #d6b5b5;
+  }
+  100% {
+    color: #ffffff;
+  }
+}
+
+
+@media screen and (max-width:800px) {
+  .standings-table {
+    width: 100%
+  }
+
+
+
+  .fixture-container {
+    width: 100%
+  }
+
+  .main-container {
+    margin: 2px
+  }
+
+  .table>:not(caption)>*>* {
+    padding: 0.5rem 0.02rem;
+  }
+
+  .offcanvas.offcanvas-end {
+    width: 70% !important;
+  }
+
+  .offcanvas.offcanvas-bottom {
+    width: 100% !important;
+  }
+
+  .team-row:hover {
+
+    transform: translateX(0);
+
+  }
+}
