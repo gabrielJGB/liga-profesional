@@ -1,7 +1,7 @@
 {
-    "name": "React PWA",
-    "short_name": "reactpwa",
-    "description": "Modern web application",
+    "name": "Liga profesional",
+    "short_name": "ligaprofesional",
+    "description": "Liga profesional 2023",
     "theme_color": "#ffffff",
     "icons": [
       {
