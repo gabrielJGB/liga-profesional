@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { DataContext } from '../../context/DataContext'
-import ball from '../../public/ball.png'
+import ball from '../../src/ball.png'
 
 const MatchRow = (props) => {
     const data = useContext(DataContext)
