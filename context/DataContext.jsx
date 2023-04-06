@@ -18,7 +18,8 @@ export const DataContext = createContext({
   setMatchToShow: null,
   showBottom: null,
   setShowBottom: null,
-  matchInfo: null
+  matchInfo: null,
+  clubs: null
 })
 
 export function DataProvider({ children }) {
@@ -35,6 +36,7 @@ export function DataProvider({ children }) {
   const [matchToShow, setMatchToShow] = useState(false);
   const [matchInfo, setMatchInfo] = useState(false);
   const [playingArr, setPlayingArr] = useState(false);
+  const [clubs, setClubs] = useState(false)
 
   // document.addEventListener('onKeyPress', (event) => {
   //   console.log(event)
@@ -69,9 +71,18 @@ export function DataProvider({ children }) {
         console.log(error)
         setError(error)
       })
-      .finally(() => {
 
+    fetch("https://gabrieljgb.github.io/pr-task/planteles.json")
+      .then(resp => resp.json())
+      .then(parsed => {
+
+        setClubs(parsed.paises[0].equipos)
       })
+      .catch(error => {
+        console.log(error)
+        setError(error)
+      })
+
 
   }, [])
 
@@ -461,7 +472,8 @@ export function DataProvider({ children }) {
     setMatchToShow,
     showBottom,
     setShowBottom,
-    matchInfo
+    matchInfo,
+    clubs
 
   }
 

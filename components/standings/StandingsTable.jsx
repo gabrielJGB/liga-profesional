@@ -9,7 +9,7 @@ const StandingsTable = () => {
   return (
     <div className="standings-table">
       <div className='standings-title'>Tabla de puntos</div>
-      <Table  striped={window.innerWidth<800?true:false} bordered  variant='dark' >
+      <Table  hover={window.innerWidth<800?true:false} bordered  variant='dark' >
         <thead>
           <tr>
             <th>#</th>
@@ -37,6 +37,7 @@ const StandingsTable = () => {
 
         </tbody>
       </Table>
+
       <div style={{marginLeft:5}}>La tabla se actualiza automáticamente durante el transcurso de los partidos.</div>
 
     </div>

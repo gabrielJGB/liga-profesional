@@ -14,7 +14,7 @@ body {
 
 
 .standings-table {
-  width: 40%;
+  width: 100%;
   font-size: 12px;
 }
 
@@ -80,7 +80,7 @@ body {
 }
 
 .team-row {
-  
+
   transition: all 0.2s;
 }
 
@@ -233,19 +233,20 @@ body {
   animation: blinkingColor 1.2s infinite;
 }
 
-.loading{
-  color:white;
+.loading {
+  color: white;
   animation: blinkingColorLoading 1s infinite;
 }
 
-.plantel-link{
-  color:#f1f1f1;
+.plantel-link {
+  color: #f1f1f1;
   font-size: 14px;
   text-decoration: none;
   margin-left: 20px;
 }
-.plantel-link:hover{
-  color:#f1f1f1;
+
+.plantel-link:hover {
+  color: #f1f1f1;
   text-decoration: underline;
 }
 
@@ -257,6 +258,7 @@ body {
   50% {
     color: #868686;
   }
+
   100% {
     color: #ffffff;
   }
@@ -265,10 +267,10 @@ body {
 @keyframes blinkingDot {
   0% {
     transform: scale(1);
-    
+
   }
 
-  50%{
+  50% {
     transform: scale(0.5);
 
   }
@@ -286,11 +288,102 @@ body {
   50% {
     color: #d6b5b5;
   }
+
   100% {
     color: #ffffff;
   }
 }
 
+
+
+.club-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+}
+
+.club-info>div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #141414;
+  color: white;
+  padding: 10px
+}
+
+
+.club-info-div {
+  font-size: 22px;
+}
+
+.club-info-title{
+  font-size: 15px;
+}
+
+.club-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px
+}
+
+.club-name {
+  margin-left: 10px;
+  font-size: 26px;
+}
+
+.club-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px
+}
+
+.player-table {
+  
+  width: 60%
+}
+
+.player-table th {
+  font-size: 13px;
+  text-align: center;
+}
+
+.player-table td {
+  text-align: center;
+  font-size: 15px;
+  
+}
+
+.club-main-container .table-dark {
+  
+  --bs-table-bg: unset ;
+}
+.pos-0{
+  background-color: #341e07 !important;
+}
+.pos-1{
+  background-color: #071f34 !important;
+}
+.pos-2{
+  background-color: #073411 !important;
+}
+.pos-3{
+  background-color: #340707 !important;
+}
+/*
+rojo: #340707
+naranja: #341e07
+celeste: #071f34
+verde: #073411
+
+*/
 
 @media screen and (max-width:800px) {
   .standings-table {
@@ -323,5 +416,33 @@ body {
 
     transform: translateX(0);
 
+  }
+
+  .club-info>div {
+
+    width: 100%
+  }
+
+  .club-info {
+    flex-direction: column;
+  }
+
+  .player-table>tbody>tr>td {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .club-info-div {
+    font-size: 16px;
+  }
+  
+  .club-info-title{
+    font-size: 11px;
+  }
+  .club-info-container{
+    width: 98%;
+  }
+  .player-table{
+    width: 98%;
   }
 }
