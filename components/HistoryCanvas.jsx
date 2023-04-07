@@ -12,14 +12,16 @@ const HistoryCanvas = () => {
     const handleShowEnd = () => data.setShowEnd(true);
 
     const getResultColor = (match) => {
-        if (match.local === data.teamToShow.equipo && match.resultado === "L" || match.visitante === data.teamToShow.equipo && match.resultado === "V") {
-            return "#0c7c0c"
-        } else if (match.visitante === data.teamToShow.equipo && match.resultado === "L" || match.local === data.teamToShow.equipo && match.resultado === "V") {
-            return "#c70202"
-        } else if (match.resultado === "E") {
-            return "#d7d705"
-        }
 
+        if (match.estado != "no empezado") {
+            if (match.local === data.teamToShow.equipo && match.resultado === "L" || match.visitante === data.teamToShow.equipo && match.resultado === "V") {
+                return "#0c7c0c"
+            } else if (match.visitante === data.teamToShow.equipo && match.resultado === "L" || match.local === data.teamToShow.equipo && match.resultado === "V") {
+                return "#c70202"
+            } else if (match.resultado === "E") {
+                return "#d7d705"
+            }
+        }
     }
 
     const formatDate = (date) => {
@@ -81,7 +83,7 @@ const HistoryCanvas = () => {
                     {data.teamToShow.equipo}
 
 
-                    <Link to="/club" state= {{ "club":data.teamToShow.equipo }}>
+                    <Link to="/club" state={{ "club": data.teamToShow.equipo }}>
 
                         <Button style={{ marginLeft: 15 }} variant='outline-info' size='sm'>Plantel</Button>
 
@@ -123,7 +125,7 @@ const HistoryCanvas = () => {
                                                 </>
                                                 )}
                                             </td>
-                                            <td className='result' style={{ color: (getResultColor(match) === "#d7d705" ? "black" : "white"), backgroundColor: (getResultColor(match)) }}>
+                                            <td style={{ color: (getResultColor(match) === "#d7d705" ? "black" : "white"), backgroundColor: (getResultColor(match)) }}>
                                                 {match.local === data.teamToShow.equipo ?
                                                     (match.goles_local + "-" + match.goles_visitante)
                                                     :

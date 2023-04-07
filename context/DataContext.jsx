@@ -77,7 +77,7 @@ export function DataProvider({ children }) {
       .then(parsed => {
 
         setClubs(parsed)
-         
+
       })
       .catch(error => {
         console.log(error)
@@ -143,26 +143,7 @@ export function DataProvider({ children }) {
   }, [playingArr])
 
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //       setPlayingArr([
-  //         {
-  //           "id":"132",
-  //           "st":"1",
-  //           "r1":"1",
-  //           "r2":"1",
-  //           "ti":"68",
-  //           "g1":"",
-  //           "g2":"",
-  //           "roj1":[],
-  //           "roj2":[]
-  //         }
-  //       ])
-  //   }, 2000);
 
-  // }, [])
-
-  let partido_viejo = null
 
   const updateplayingArr = () => {
     if (obj) {
@@ -172,9 +153,6 @@ export function DataProvider({ children }) {
             prevObj.fechas.forEach(fecha => {
               fecha.partidos.forEach(partido => {
                 if (partido.id == partido_nuevo.id) {
-                  partido_viejo = partido
-
-
 
 
                   partido.goles_local = partido_nuevo.r1 === "" ? "" : parseInt(partido_nuevo.r1)
@@ -186,19 +164,6 @@ export function DataProvider({ children }) {
                   partido.rojas_visitante = parseInt(partido_nuevo.roj2)
                   partido.autores_local = getScorerArr(partido_nuevo.g1)
                   partido.autores_visitante = getScorerArr(partido_nuevo.g2)
-                  //ver grito de gol y resaltado. Idea: usando useRef. Setear la id como Ref en el div de los goles y hacer referencia a eso aca
-
-                  // if(partido.goles_local != partido_viejo.goles_local){
-
-                  //   console.log("hubo gol [L]",partido.id, new Date())
-                  // }else if( partido.goles_visitante != partido_viejo.goles_visitante){
-                  //   console.log("hubo gol [V]",partido.id,new Date())
-                  // }
-                  // else{
-                  //   console.log("no hubo gol",partido.id,new Date());
-                  // }
-
-
 
 
                 }
@@ -250,16 +215,16 @@ export function DataProvider({ children }) {
     }
 
     const getResult = (goles_local, goles_visitante) => {
-      if (goles_local != NaN && goles_visitante != NaN) {
+      if (goles_local != "" && goles_visitante != "") {
         if (goles_local === goles_visitante) {
           return "E"
         } else if (goles_local > goles_visitante) {
           return "L"
         } else if (goles_local < goles_visitante) {
           return "V"
-        } else {
-          return ""
         }
+      } else {
+        return ""
       }
     }
 
@@ -290,9 +255,14 @@ export function DataProvider({ children }) {
 
   const fetchScores = () => {
 
-    let url = "https://cors-proxy-alt.onrender.com/https://www.promiedos.com.ar/scores84mjd7.json"
-    let req_info = { headers: { 'X-Requested-With': 'XMLHttpRequest' } }
-    fetch(url, req_info)
+    let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json"
+    // let url = "https://cors-proxy-alt.onrender.com/https://www.promiedos.com.ar/scores84mjd7.json"
+    // let req_info = { headers: { 'X-Requested-With': 'XMLHttpRequest' } }
+
+
+
+
+    fetch(url)
       .then(resp => resp.json())
       .then(parsed => {
         let x = parsed.pa.filter(partido => partido.li === "1") // 1 : argentina

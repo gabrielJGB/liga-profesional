@@ -391,6 +391,9 @@ verde: #073411
     width: 100%
   }
 
+  .standings-table tr:nth-child(3){
+    background-color: #071f34 !important;
+  }
 
 
   .fixture-container {
