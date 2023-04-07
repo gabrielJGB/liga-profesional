@@ -1,8 +1,8 @@
 {
-    "name": "Liga profesional",
-    "short_name": "ligaprofesional",
+    "name": "Liga profesional 2023",
+    "short_name": "Liga Profesional",
     "description": "Liga profesional 2023",
-    "theme_color": "#ffffff",
+    "theme_color": "#363636",
     "icons": [
       {
         "src": "pwa-192x192.png",
