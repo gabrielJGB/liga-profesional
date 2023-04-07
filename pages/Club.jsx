@@ -151,7 +151,7 @@ const Club = () => {
                   club.jugadores.map((jugador,i) => (
                     <tr key={i} className={getClassName(jugador.pos)}>
                       <td>{jugador.numero}</td>
-                      <td>
+                      <td style={{padding:"0 5"}}>
                         <img width={40} height={40} src={jugador.img_jugador} alt={jugador.nombre_corto} />
                       </td>
                       <td style={{padding:5}}>{jugador.nombre_completo}</td>

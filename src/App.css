@@ -358,6 +358,7 @@ body {
 .player-table td {
   text-align: center;
   font-size: 15px;
+  vertical-align : middle;
   
 }
 
@@ -375,7 +376,7 @@ body {
   background-color: #073411 !important;
 }
 .pos-3{
-  background-color: #340707 !important;
+  background-color: #480404 !important;
 }
 /*
 rojo: #340707
