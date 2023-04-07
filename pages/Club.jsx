@@ -11,88 +11,65 @@ const Club = () => {
 
 
     clubs.forEach(club => {
-      if (club.nombre_equipo === "Argentinos Juniors") {
-
-        club.nombre_equipo = "Argentinos"
-
+      if (club.equipo === "CA River Plate") {
+        club.equipo = "River Plate"
+      }else if(club.equipo === "CA Boca Juniors"){
+        club.equipo = "Boca Juniors"
+      }else if(club.equipo === "CA Vélez Sarsfield"){
+        club.equipo = "Velez"
+      }else if(club.equipo === "Racing Club"){
+        club.equipo = "Racing Club"
+      }else if(club.equipo === "Club Atlético Talleres"){
+        club.equipo = "Talleres (C)"
+      }else if(club.equipo === "CA San Lorenzo de Almagro"){
+        club.equipo = "San Lorenzo"
+      }else if(club.equipo === "Club Atlético Tigre"){
+        club.equipo = "Tigre"
+      }else if(club.equipo === "CA Huracán"){
+        club.equipo = "Huracan"
+      }else if(club.equipo === "Club Atlético Lanús"){
+        club.equipo = "Lanus"
+      }else if(club.equipo === "CSD Defensa y Justicia"){
+        club.equipo = "Def y Justicia"
+      }else if(club.equipo === "Club Estudiantes de La Plata"){
+        club.equipo = "Estudiantes (LP)"
+      }else if(club.equipo === "CA Newells Old Boys"){
+        club.equipo = "Newells"
+      }else if(club.equipo === "Club Atlético Colón"){
+        club.equipo = "Colon"
+      }else if(club.equipo === "CA Rosario Central"){
+        club.equipo = "Rosario Central"
+      }else if(club.equipo === "AA Argentinos Juniors"){
+        club.equipo = "Argentinos"
+      }else if(club.equipo === "CA Banfield"){
+        club.equipo = "Banfield"
+      }else if(club.equipo === "Club de Gimnasia y Esgrima La Plata"){
+        club.equipo = "Gimnasia (LP)"
+      }else if(club.equipo === "Club Atlético Tucumán"){
+        club.equipo = "Atl Tucuman"
+      }else if(club.equipo === "CA Independiente"){
+        club.equipo = "Independiente"
+      }else if(club.equipo === "Club Atlético Belgrano"){
+        club.equipo = "Belgrano"
+      }else if(club.equipo === "CD Godoy Cruz Antonio Tomba"){
+        club.equipo = "Godoy Cruz"
+      }else if(club.equipo === "Club Atlético Unión"){
+        club.equipo = "Union"
+      }else if(club.equipo === "CA Platense"){
+        club.equipo = "Platense"
+      }else if(club.equipo === "Instituto AC Córdoba"){
+        club.equipo = "Instituto"
+      }else if(club.equipo === "CA Sarmiento (Junín)"){
+        club.equipo = "Sarmiento (J)"
+      }else if(club.equipo === "CA Central Córdoba (SdE)"){
+        club.equipo = "Central Cordoba (SdE)"
+      }else if(club.equipo === "CA Barracas Central"){
+        club.equipo = "Barracas Central"
+      }else if(club.equipo === "Arsenal Fútbol Club"){
+        club.equipo = "Arsenal"
       }
-      else if (club.nombre_equipo === "Arsenal de Sarandí") {
-        club.nombre_equipo = "Arsenal"
-
-      }
-      else if (club.nombre_equipo === "Atlético Tucumán") {
-        club.nombre_equipo = "Atl Tucuman"
-
-      }
-
-      else if (club.nombre_equipo === "CA Aldosivi") { // ------------------
-        club.nombre_equipo = ""
-
-      }
-      else if (club.nombre_equipo === "CA Patronato") { // ---------------------
-        club.nombre_equipo = ""
-
-      }
-      else if (club.nombre_equipo === "Platense") {
-        club.nombre_equipo = "Platense"
-
-      }
-      else if (club.nombre_equipo === "Sarmiento") {
-        club.nombre_equipo = "Sarmiento (J)"
-
-      }
-      else if (club.nombre_equipo === "CA Talleres") {
-        club.nombre_equipo = "Talleres (C)"
-
-      }
-      else if (club.nombre_equipo === "CA Tigre") {
-        club.nombre_equipo = "Tigre"
-
-      }
-      else if (club.nombre_equipo === "Central Córdoba SdE") {
-        club.nombre_equipo = "Central Cba (SdE)"
-
-      }
-      else if (club.nombre_equipo === "Colón") {
-        club.nombre_equipo = "Colon"
-
-      }
-      else if (club.nombre_equipo === "Defensa y Justicia") {
-        club.nombre_equipo = "Def y Justicia"
-
-      }
-      else if (club.nombre_equipo === "Estudiantes de LP") {
-        club.nombre_equipo = "Estudiantes (LP)"
-
-      }
-      else if (club.nombre_equipo === "Gimnasia La Plata") {
-        club.nombre_equipo = "Gimnasia (LP)"
-
-      }
-
-      else if (club.nombre_equipo === "Huracán") {
-        club.nombre_equipo = "Huracan"
-
-      }
-
-      else if (club.nombre_equipo === "Lanús") {
-        club.nombre_equipo = "Lanus"
-
-      }
-      else if (club.nombre_equipo === "Newell’s Old Boys") {
-        club.nombre_equipo = "Newells"
-
-      }
-
-
-      else if (club.nombre_equipo === "Unión Santa Fe") {
-        club.nombre_equipo = "Union"
-
-      }
-      else if (club.nombre_equipo === "Vélez Sársfield") {
-        club.nombre_equipo = "Velez"
-
-      }
+      
+      
     })
 
 
@@ -101,17 +78,16 @@ const Club = () => {
 
   const getClassName = (pos)=>{
 
-    if(pos === "PO"){
+    if(pos === "Portero"){
       return "pos-0"
-    }else if(pos[0] === "D"){
+    }else if(pos === "Defensa"){
       return "pos-1"
-
     }
-    else if(pos.includes("A")){
-      return "pos-3"
-    }
-    else if(pos[0] === "M"){
+    else if(pos === "Medio campo"){
       return "pos-2"
+    }
+    else if(pos === "Delantero"){
+      return "pos-3"
     }
 
   }
@@ -121,9 +97,9 @@ const Club = () => {
   useEffect(() => {
     if (data.clubs) {
       modifyNames(data.clubs)
-
+  
       data.clubs.forEach(club => {
-        if (club.nombre_equipo === location.state.club) {
+        if (club.equipo === location.state.club) {
           setClub(club)
         }
       })
@@ -137,26 +113,24 @@ const Club = () => {
           <>
             <div className='club-info-container'>
               <div className='club-img'>
-                <img width={90} height={90} src={club.escudo} />
-                <span className='club-name'>{club.nombre_equipo}</span>
+                <img width={90} height={120} src={club.img_escudo} />
+                <span className='club-name'>{club.equipo}</span>
               </div>
               <div className='club-info'>
-                <div>
-                  <div className='club-info-div'>{club.tecnico}</div>
-                  <div className='club-info-title'>Tecnico</div>
-                </div>
-                <div>
-                  <div className='club-info-div'>{club.fundacion}</div>
-                  <div className='club-info-title'>Fundación</div>
-                </div>
+
                 <div>
                   <div className='club-info-div'>{club.estadio}</div>
                   <div className='club-info-title'>Estadio</div>
                 </div>
                 <div>
-                  <div className='club-info-div'>{club.ubicacion}</div>
-                  <div className='club-info-title'>Ciudad</div>
+                  <div className='club-info-div'>{club.capacidad}</div>
+                  <div className='club-info-title'>Capacidad</div>
                 </div>
+                <div>
+                  <div className='club-info-div'>{club.prom_edad} años</div>
+                  <div className='club-info-title'>Promedio edad</div>
+                </div>
+
               </div>
             </div>
 
@@ -166,8 +140,8 @@ const Club = () => {
                   <th>Num</th>
                   <th>Foto</th>
                   <th>Nombre</th>
-                  <th>Pos</th>
-                  <th>Origen</th>
+                  <th>Posición</th>
+                  <th>Nac.</th>
                   <th>Edad</th>
                 </tr>
               </thead>
@@ -175,15 +149,21 @@ const Club = () => {
 
                 {
                   club.jugadores.map((jugador,i) => (
-                    <tr key={i} className={getClassName(jugador.posicion_codigo)}>
-                      <td>{jugador.numero === "0"?"-":jugador.numero}</td>
+                    <tr key={i} className={getClassName(jugador.pos)}>
+                      <td>{jugador.numero}</td>
                       <td>
-                        <img width={40} height={40} src={jugador.link_foto} alt={jugador.nombre_completo} />
+                        <img width={40} height={40} src={jugador.img_jugador} alt={jugador.nombre_corto} />
                       </td>
-                      <td>{jugador.nombre_completo}</td>
-                      <td>{jugador.posicion_codigo}</td>
-                      <td>{jugador.pais}</td>
-                      <td>{jugador.edad}</td>
+                      <td style={{padding:5}}>{jugador.nombre_completo}</td>
+                      <td>{jugador.pos_completa}</td>
+                      <td>
+                        {
+                          jugador.nacionalidad.map((flag,i)=>(
+                            <img key={i} style={{padding:2}} src={flag.img_bandera} alt={flag.pais} />
+                          ))
+                        }
+                      </td>
+                      <td>{jugador.edad.split(" (")[1].slice(0,-1)}</td>
                     </tr>
                   ))
                 }

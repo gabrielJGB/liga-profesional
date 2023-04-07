@@ -83,7 +83,7 @@ const HistoryCanvas = () => {
 
                     <Link to="/club" state= {{ "club":data.teamToShow.equipo }}>
 
-                        <Button style={{ marginLeft: 15 }} variant='outline-info' size='sm'>Ver plantel</Button>
+                        <Button style={{ marginLeft: 15 }} variant='outline-info' size='sm'>Plantel</Button>
 
                     </Link>
 
@@ -100,7 +100,7 @@ const HistoryCanvas = () => {
                                     data.teamHistory.map((match, i) => (
                                         <tr key={i} className='history-row' onClick={() => {
                                             data.setMatchToShow(match.id)
-                                            data.setShowBottom(true)
+                                            data.setShowEnd(true)
                                         }}
                                         >
                                             <td className='number'>{i + 1}</td>

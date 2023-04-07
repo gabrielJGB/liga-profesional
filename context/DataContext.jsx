@@ -72,11 +72,12 @@ export function DataProvider({ children }) {
         setError(error)
       })
 
-    fetch("https://gabrieljgb.github.io/pr-task/planteles.json")
+    fetch("https://gabrieljgb.github.io/pr-task/equipos_min.json")
       .then(resp => resp.json())
       .then(parsed => {
 
-        setClubs(parsed.paises[0].equipos)
+        setClubs(parsed)
+         
       })
       .catch(error => {
         console.log(error)
