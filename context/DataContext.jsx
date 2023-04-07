@@ -37,24 +37,7 @@ export function DataProvider({ children }) {
   const [matchInfo, setMatchInfo] = useState(false);
   const [playingArr, setPlayingArr] = useState(false);
   const [clubs, setClubs] = useState(false)
-
-  // document.addEventListener('onKeyPress', (event) => {
-  //   console.log(event)
-  //   setSelected(prev => {
-  //     let fecha
-  //     if (event.key === "ArrowLeft") {
-  //       fecha = prev - 1
-  //     } else if (event.key === "ArrowRight") {
-  //       fecha = prev + 1
-  //     }
-  //     if (fecha > 0 && fecha <= obj.fechas.length) {
-  //       return fecha
-  //     } else {
-  //       return prev
-  //     }
-  //   })
-  // })
-
+  let interval = null
 
   useEffect(() => {
 
@@ -63,7 +46,6 @@ export function DataProvider({ children }) {
       .then(resp => resp.json())
       .then(parsed => {
         setObj(parsed)
-
         setStandingsTable(calculateStandingsTable(parsed.fechas))
 
       })
@@ -84,18 +66,24 @@ export function DataProvider({ children }) {
         setError(error)
       })
 
-
   }, [])
-
-
-
-
 
   useEffect(() => {
 
+    if (interval != null) {
+      clearInterval(interval)
+    }
+    fetchScores()
+
+    interval = setInterval(() => {
+      fetchScores()
+    }, 30000);
+
+  }, [])
+
+  useEffect(() => {
 
     if (teamToShow) {
-
       let fullArr = []
 
       obj.fechas.forEach(fecha => {
@@ -106,19 +94,13 @@ export function DataProvider({ children }) {
         }
 
       })
-
       setTeamHistory(fullArr)
-
-
     }
-
   }, [teamToShow])
 
 
   useEffect(() => {
-
     if (matchToShow) {
-
       let matchId
 
       obj.fechas.forEach(fecha => {
@@ -133,16 +115,10 @@ export function DataProvider({ children }) {
   }, [matchToShow])
 
 
-
-
   useEffect(() => {
-
     updateplayingArr()
 
-
   }, [playingArr])
-
-
 
 
   const updateplayingArr = () => {
@@ -174,11 +150,6 @@ export function DataProvider({ children }) {
 
           return prevObj
         })
-
-
-
-
-
       }
     }
 
@@ -228,29 +199,7 @@ export function DataProvider({ children }) {
       }
     }
 
-
   }
-
-  let interval = null
-
-
-
-
-
-  useEffect(() => {
-
-    if (interval != null) {
-      clearInterval(interval)
-    }
-    fetchScores()
-
-    interval = setInterval(() => {
-      fetchScores()
-    }, 30000);
-
-  }, [])
-
-
 
 
   const fetchScores = () => {
@@ -258,8 +207,6 @@ export function DataProvider({ children }) {
     let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json"
     // let url = "https://cors-proxy-alt.onrender.com/https://www.promiedos.com.ar/scores84mjd7.json"
     // let req_info = { headers: { 'X-Requested-With': 'XMLHttpRequest' } }
-
-
 
 
     fetch(url)
@@ -279,11 +226,7 @@ export function DataProvider({ children }) {
 
   }
 
-
-
-
-
-  function calculateStandingsTable(fechas) {
+  const calculateStandingsTable = fechas => {
 
     let equipos = []
     fechas[0].partidos.forEach(partido => {
@@ -317,8 +260,6 @@ export function DataProvider({ children }) {
       })
     })
 
-
-
     // info_tabla.sort((a, b) => a.equipo.localeCompare(b.equipo))
     // info_tabla.sort(((a, b) => b.puntos - a.puntos))
 
@@ -341,13 +282,7 @@ export function DataProvider({ children }) {
     return info_tabla
   }
 
-
-
-
-
-
-
-  function getInfoGoles(equipo, fechas) {
+  const getInfoGoles = (equipo, fechas) => {
     let goles_favor = 0
     let goles_contra = 0
     let dif_goles = 0
@@ -371,8 +306,7 @@ export function DataProvider({ children }) {
     return { goles_favor, goles_contra, dif_goles }
   }
 
-
-  function getInfoPartidos(equipo, fechas) {
+  const getInfoPartidos = (equipo, fechas) => {
     let jugados = 0
     let ganados = 0
     let empatados = 0
@@ -404,8 +338,7 @@ export function DataProvider({ children }) {
 
   }
 
-
-  function getNombreCorto(equipo) {
+  const getNombreCorto = equipo => {
     if (equipo == "Argentinos Juniors") {
       return "Argentinos"
     } else if (equipo == "Atlético Tucumán") {

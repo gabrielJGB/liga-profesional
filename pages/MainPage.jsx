@@ -9,7 +9,6 @@ import FixtureArrows from '../components/fixture/FixtureArrows'
 import { DataContext } from '../context/DataContext'
 
 import Button from 'react-bootstrap/Button'
-
 import ScorersTable from '../components/ScorersTable'
 
 
