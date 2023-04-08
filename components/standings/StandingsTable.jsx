@@ -38,7 +38,7 @@ const StandingsTable = () => {
         </tbody>
       </Table>
 
-      <div style={{marginLeft:5}}>La tabla se actualiza automáticamente durante el transcurso de los partidos.</div>
+      <div style={{marginLeft:5}}>La tabla de puntos se actualiza automáticamente durante el transcurso de los partidos.</div>
 
     </div>
 

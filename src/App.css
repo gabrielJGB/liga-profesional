@@ -27,8 +27,14 @@ body {
 
 .standings-table td {
   text-align: center;
+}
 
+.standings-table tr:nth-child(1) td{
+  background-color: #15400a !important;
+}
 
+.standings-table tr:nth-child(1):hover{
+  background-color: #267e10 !important;
 }
 
 .standings-title {
@@ -196,7 +202,7 @@ body {
 }
 
 .fin {
-  background-color: #162e19 !important;
+  background-color: #131d28 !important;
 }
 
 
@@ -391,9 +397,6 @@ verde: #073411
     width: 100%
   }
 
-  .standings-table tr:nth-child(3){
-    background-color: #071f34 !important;
-  }
 
 
   .fixture-container {
@@ -405,7 +408,7 @@ verde: #073411
   }
 
   .table>:not(caption)>*>* {
-    padding: 0.5rem 0.02rem;
+    padding: 0.5rem 0.2rem;
   }
 
   .offcanvas.offcanvas-end {
