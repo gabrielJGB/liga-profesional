@@ -187,7 +187,7 @@ export function DataProvider({ children }) {
 
     const getResult = (estado,goles_local, goles_visitante) => {
       
-      if (estado === "jugando") {
+      if (estado != "no empezado") {
         if (goles_local === goles_visitante) {
           return "E"
         } else if (goles_local > goles_visitante) {
