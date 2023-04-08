@@ -45,8 +45,8 @@ const MatchRow = (props) => {
 
                 </td>
 
-                <td style={{ width: "8%" }}>{props.match.goles_local}</td>
-                <td style={{ width: "8%" }}>{props.match.goles_visitante}</td>
+                <td style={{fontSize:13, width: "8%" }}>{props.match.goles_local}</td>
+                <td style={{fontSize:13, width: "8%" }}>{props.match.goles_visitante}</td>
 
                 <td className="box" style={{ fontWeight: (props.match.resultado === "V" ? "bold" : "") }}>
                     <div className="box">
@@ -102,7 +102,5 @@ const MatchRow = (props) => {
     )
 }
 
-// color jugando: #b50000
-//color final: #121212
 
 export default MatchRow

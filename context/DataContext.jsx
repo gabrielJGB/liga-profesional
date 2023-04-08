@@ -129,17 +129,17 @@ export function DataProvider({ children }) {
             prevObj.fechas.forEach(fecha => {
               fecha.partidos.forEach(partido => {
                 if (partido.id == partido_nuevo.id) {
-
-
+                  
                   partido.goles_local = partido_nuevo.r1 === "" ? "" : parseInt(partido_nuevo.r1)
                   partido.goles_visitante = partido_nuevo.r2 === "" ? "" : parseInt(partido_nuevo.r2)
                   partido.estado = getStatus(partido_nuevo)
                   partido.cronometro = getLabel(partido.estado, partido_nuevo.ti)
-                  partido.resultado = getResult(partido.goles_local, partido.goles_visitante)
+                  partido.resultado = getResult(partido.estado,partido.goles_local, partido.goles_visitante)
                   partido.rojas_local = parseInt(partido_nuevo.roj1)
                   partido.rojas_visitante = parseInt(partido_nuevo.roj2)
                   partido.autores_local = getScorerArr(partido_nuevo.g1)
                   partido.autores_visitante = getScorerArr(partido_nuevo.g2)
+                  
 
 
                 }
@@ -185,8 +185,9 @@ export function DataProvider({ children }) {
 
     }
 
-    const getResult = (goles_local, goles_visitante) => {
-      if (goles_local != "" && goles_visitante != "") {
+    const getResult = (estado,goles_local, goles_visitante) => {
+      
+      if (estado === "jugando") {
         if (goles_local === goles_visitante) {
           return "E"
         } else if (goles_local > goles_visitante) {
@@ -203,8 +204,9 @@ export function DataProvider({ children }) {
 
 
   const fetchScores = () => {
+    let date = new Date().getTime()
 
-    let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json"
+    let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json?_="+date
     // let url = "https://cors-proxy-alt.onrender.com/https://www.promiedos.com.ar/scores84mjd7.json"
     // let req_info = { headers: { 'X-Requested-With': 'XMLHttpRequest' } }
 
