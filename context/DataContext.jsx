@@ -65,21 +65,22 @@ export function DataProvider({ children }) {
         console.log(error)
         setError(error)
       })
+      .finally(()=>setLoading(false))
 
   }, [])
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    if (interval != null) {
-      clearInterval(interval)
-    }
-    fetchScores()
+  //   if (interval != null) {
+  //     clearInterval(interval)
+  //   }
+  //   fetchScores()
 
-    interval = setInterval(() => {
-      fetchScores()
-    }, 30000);
+  //   interval = setInterval(() => {
+  //     fetchScores()
+  //   }, 30000);
 
-  }, [])
+  // }, [])
 
   useEffect(() => {
 
@@ -206,12 +207,12 @@ export function DataProvider({ children }) {
   const fetchScores = () => {
     let date = new Date().getTime()
 
-    let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json?_="+date
-    // let url = "https://cors-proxy-alt.onrender.com/https://www.promiedos.com.ar/scores84mjd7.json"
-    // let req_info = { headers: { 'X-Requested-With': 'XMLHttpRequest' } }
+    // let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json?_="+date
+    let url = "https://cors-proxy-alt.onrender.com/https://www.promiedos.com.ar/scores84mjd7.json"
+    let req_info = { headers: { 'X-Requested-With': 'XMLHttpRequest' } }
 
 
-    fetch(url)
+    fetch(url,req_info)
       .then(resp => resp.json())
       .then(parsed => {
         let x = parsed.pa.filter(partido => partido.li === "1") // 1 : argentina

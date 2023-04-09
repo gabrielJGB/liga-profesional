@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/Button';
 import React, { useContext, useState } from 'react'
 import { DataContext } from '../../context/DataContext'
 import ball from '../../src/ball.png'
@@ -19,11 +20,7 @@ const MatchRow = (props) => {
 
     return (
         <>
-            <tr className='match-row' onClick={() => {
-                data.setMatchToShow(props.match.id)
-                data.setShowBottom(true)
-                toggleDisplay()
-            }}>
+            <tr className='match-row' onClick={() => { toggleDisplay() }}>
 
                 <td style={{ width: "15%" }}
                     className={props.match.estado === "jugando" ? "cronometro" : (props.match.estado === "finalizado" ? "fin" : "")}
@@ -64,7 +61,10 @@ const MatchRow = (props) => {
                 </td>
             </tr>
             <tr style={{ display: (displayTr) }} >
-                <td></td>
+                <td style={{ verticalAlign: "middle"}}>
+
+                    <button className='match-button' onClick={()=>data.setShowBottom(true)}>+</button>
+                </td>
                 <td colSpan={2}>
                     {props.match.autores_local.map((autor, i) => {
                         {

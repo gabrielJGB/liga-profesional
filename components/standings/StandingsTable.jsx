@@ -9,7 +9,7 @@ const StandingsTable = () => {
   return (
     <div className="standings-table">
       <div className='standings-title'>Tabla de puntos</div>
-      <Table  hover={window.innerWidth<800?true:false} bordered  variant='dark' >
+      <Table   bordered  variant='dark' >
         <thead>
           <tr>
             <th>#</th>

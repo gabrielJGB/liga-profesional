@@ -8,8 +8,8 @@ import FixtureArrows from '../components/fixture/FixtureArrows'
 import ScorersTable from '../components/ScorersTable'
 import Error from '../components/Error'
 import Loading from '../components/Loading'
+import MatchCanvas from '../components/MatchCanvas'
 import { DataContext } from '../context/DataContext'
-
 
 const MainPage = () => {
     const data = useContext(DataContext)
@@ -35,6 +35,7 @@ const MainPage = () => {
                                 <FixtureTable />
                             </div>
                             <HistoryCanvas />
+                            <MatchCanvas />
                         </div >
             }
         </div>

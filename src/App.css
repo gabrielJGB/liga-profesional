@@ -140,53 +140,11 @@ body {
   padding: 0 !important;
 }
 
-.offcanvas.offcanvas-bottom {
 
-  width: 50% !important;
-}
 
 
 .btn-close {
   background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fc0'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
-}
-
-.match-title {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-
-  gap: 10px
-}
-
-.match-day {
-  font-size: 14px;
-}
-
-.match-number {
-  font-size: 22px;
-}
-
-.match-body {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-
-}
-
-.match-team {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.match-score {
-  font-size: 40px;
-}
-
-.match-container {
-  background-color: #d30000;
-
 }
 
 
@@ -391,6 +349,242 @@ celeste: #071f34
 verde: #073411
 
 */
+
+
+/* -   - - - - - - - - - - - - - - - - - - - - - - - - -*/
+iframe { display:block }
+
+
+
+
+.match-close-div{
+  display: flex;
+  justify-content: center;
+}
+
+.match-close-button{
+  width:100%;
+  background-color: #1d1d1d;
+  padding:5px;
+  border:0;
+  border-bottom:solid 1px #000000;
+  color:#e7e7e7;
+  font-size: 14px;
+  outline: none;
+}
+
+
+.match-button{
+  height: 35px;
+  width: 100%;
+  background-color: #205469;
+  border-radius: 3px;
+  font-size: 18px;
+  color:#eeeeee;
+  border:0;
+  transition: all 0.15s;
+  
+}
+.match-button:hover{
+  background-color: #246a86;
+}
+
+.match-header{
+  display: flex;
+  background-color: #e2e2e2;
+}
+
+.match-header div{
+  padding: 2px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team1,.team2{
+  font-size: 17px;
+  width:40%;
+  color:#1a1a1a
+}
+
+.team1 img{
+  margin-right: 10px;
+}
+
+.team2 img{
+  margin-left: 10px;
+}
+.score1,.score2{
+  width:10%;
+  background-color: #0a0a0a;
+  font-size: 20px;
+}
+.score1{
+  border-right: solid 1px #363636;
+}
+
+
+.offcanvas.offcanvas-bottom {
+  
+  width: 50% !important;
+  height: 100% !important;
+  
+}
+
+.offcanvas-header{
+  display:block !important;
+  padding:0 !important;
+}
+
+.match-body{
+  background-color: #202020;
+
+}
+
+
+.match-scroll-content{
+  
+
+}
+
+
+.sec-header{
+  text-align: center;
+  background-color: #000000;
+  color: #e0e0e0;
+  padding:12px 0;
+}
+
+.sec-body{
+  width: 100%;
+  
+}
+
+.stat-container{
+  margin:10px 5px;
+  box-shadow: 0 0 5px #0c0c0c;
+  
+}
+
+.stat-header{
+  width: 100%;
+  background-color: #303030;
+  color:#eeeeee;
+  padding:5px 0 ;
+  text-align: center;
+}
+
+.stat-body{
+  display: flex;
+}
+
+.stat-bar{
+  text-align: center;
+}
+
+.stat-bar1{
+  height:22px;
+  background-color: #20702b;
+
+}
+
+.stat-bar2{
+  height:22px;
+  background-color: #111d3d;
+  
+}
+
+.incidencias-body{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.incidencia{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: solid 2px #181818;
+  font-size: 13px;
+}
+
+
+
+.inc-local,.inc-visitante{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width:43%
+}
+
+.inc-minutos{
+  text-align: center;
+  
+  width: 14%;
+  padding: 8px;
+  margin: 6px;
+  
+}
+
+
+.icono-roja{
+  height: 15px;
+  width: 10px;
+  background-color: red;
+}
+
+.icono-amarilla{
+  height: 15px;
+  width: 10px;
+  background-color: yellow;
+}
+
+.header-formaciones{
+  width: 100%;
+  background-color: #e2e2e2;
+  color:#000000;
+  padding:5px 0 ;
+  text-align: center;
+}
+
+.body-formaciones{
+  display: flex;
+  gap:5px;
+  flex-direction: row;
+  
+}
+
+.lista-jugadores{
+  width:50%;
+  background-color: #131313;
+}
+
+.num{
+  display: inline;
+  background-color: #dad4d4;
+  color:#000000;
+  border-radius:5px;
+  padding: 3px;
+  min-width: 22px;
+  text-align: center;
+  
+}
+.cap{
+  background-color: #0064e7;
+  color:#ffffff
+}
+
+.jugador{
+  display: flex;
+  padding:6px;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.flag{
+  margin:0 5px
+}
 
 @media screen and (max-width:800px) {
   .standings-table {
