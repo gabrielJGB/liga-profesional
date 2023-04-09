@@ -21,7 +21,7 @@ const MatchCanvas = () => {
                                 <span>
                                     {
                                         jugadores.map((jugador, i) => (
-                                            <div>{jugador}</div>
+                                            <div key={i}>{jugador}</div>
                                         ))
                                     }
                                 </span>
@@ -64,7 +64,7 @@ const MatchCanvas = () => {
                                 <span>
                                     {
                                         jugadores.map((jugador, i) => (
-                                            <div>{jugador}</div>
+                                            <div key={i}>{jugador}</div>
                                         ))
                                     }
                                 </span>

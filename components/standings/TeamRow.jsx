@@ -33,11 +33,11 @@ const TeamRow = (props) => {
 
 
                     if (partido.resultado === "L" && partido.local === team || partido.resultado === "V" && partido.visitante === team) {
-                        setColor("green")
+                        setColor("#00ff00")
                     } else if (partido.resultado === "V" && partido.local === team || partido.resultado === "L" && partido.visitante === team) {
-                        setColor("red")
+                        setColor("#ff0000")
                     } else if (partido.resultado === "E") {
-                        setColor("yellow")
+                        setColor("#ffd400")
                     } else {
                         setColor("white")
                     }
